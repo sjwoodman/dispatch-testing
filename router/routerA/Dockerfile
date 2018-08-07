@@ -58,6 +58,5 @@ EXPOSE 5671
 EXPOSE 5672
 
 # Start the dispatch router
-CMD qdrouterd
- #-c /tmp/sjw.conf
+CMD qdrouterd -c /tmp/sjw.conf
 # CMD ["/bin/bash"]

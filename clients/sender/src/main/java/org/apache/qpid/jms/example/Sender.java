@@ -60,20 +60,15 @@ public class Sender {
             connection.setExceptionListener(new MyExceptionListener());
             connection.start();
 
-            System.out.println("x");
-
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
-            System.out.println("y");
             MessageProducer messageProducer = session.createProducer(queue);
 
-            System.out.println("z");
             long start = System.currentTimeMillis();
             for (int i = 1; i <= count; i++) {
 
                 TextMessage message = session.createTextMessage("Text! " + i);
                 messageProducer.send(message, DELIVERY_MODE, Message.DEFAULT_PRIORITY, Message.DEFAULT_TIME_TO_LIVE);
-                System.out.println("s");
                 System.out.println(i);
                 if (i % 100 == 0) {
                     System.out.println("Sent message " + i);

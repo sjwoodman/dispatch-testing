@@ -39,6 +39,11 @@
             <artifactId>qpid-jms-client</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+        </dependency>
         <!-- Provide a logging implementation to avoid
              notice from SLF4J that none was found -->
         <dependency>
